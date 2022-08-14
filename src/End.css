@@ -1,0 +1,41 @@
+.endform {
+  display: flex;
+  padding-left: 100px;
+
+  background: rgb(38, 121, 83);
+  height: 300px;
+  width: 1020px;
+  font-weight: bold;
+  font-family: 'PT Sans Narrow', sans-serif;
+  letter-spacing: 2px;
+}
+.endform2 {
+  font-weight: bold;
+  font-family: 'PT Sans Narrow', sans-serif;
+  margin-top: -23px;
+  letter-spacing: 2px;
+  background: rgb(38, 121, 83);
+  height: 70px;
+  width: 1120px;
+}
+.endformitem {
+  flex: 33.33%;
+}
+.icon {
+  display: flex;
+}
+.Deakin {
+  display: flex;
+  justify-content: center;
+}
+.endform3 {
+  display: flex;
+  padding-left: 100px;
+
+  background: rgb(38, 121, 83);
+  height: 100px;
+  width: 1020px;
+  font-weight: bold;
+  font-family: 'PT Sans Narrow', sans-serif;
+  letter-spacing: 2px;
+}

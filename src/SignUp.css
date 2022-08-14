@@ -1,0 +1,19 @@
+.forminput {
+  font-family: 'PT Sans Narrow', sans-serif;
+  flex-direction: row;
+  height: 20px;
+  width: 500px;
+  margin-right: 20px;
+
+  font-weight: bold;
+  font-size: 01em;
+}
+.form-button {
+  font-family: inherit;
+  text-transform: uppercase;
+  font-weight: 800;
+  background: rgb(110, 105, 105);
+  height: 30px;
+  margin-top: 5px;
+  color: rgb(0, 0, 0);
+}

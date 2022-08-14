@@ -1,5 +1,9 @@
 body {
   margin: 0;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  display: flex;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
@@ -10,4 +14,72 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+.formitem {
+  font-family: 'PT Sans Narrow', sans-serif;
+  flex-direction: row;
+  height: 30px;
+  margin-right: 20px;
+  margin-top: 5px;
+
+  font-weight: bold;
+  font-size: 1.5em;
+}
+
+.form {
+  display: flex;
+  width: 1000px;
+  margin-top: 30px;
+
+  flex-direction: row;
+  box-shadow: 0 0 40px rgb(200, 199, 199);
+  padding: 5px;
+  border-radius: 0px;
+  background: rgb(200, 199, 199);
+}
+.form1 {
+  display: flex;
+
+  flex-direction: row;
+  box-shadow: 0 0 40px rgb(255, 255, 255);
+  padding: 5px;
+  border-radius: 0px;
+  background: rgb(255, 255, 255);
+}
+.search {
+  font-family: 'PT Sans Narrow', sans-serif;
+  font-size: 1rem;
+  border: none;
+  width: 600px;
+  height: 33px;
+}
+.pl {
+  border: none;
+  background: rgb(200, 199, 199);
+  border-color: rgb(200, 199, 199);
+  letter-spacing: 1px;
+  border-radius: 10px;
+
+  font-size: 1.5rem;
+  font-weight: bold;
+  font-family: 'PT Sans Narrow', sans-serif;
+}
+.ai {
+  background-color: rgb(255, 255, 255);
+  border: none;
+  color: rgb(188, 196, 196);
+}
+.image {
+  width: 1000px;
+  height: 400px;
+}
+.feature {
+  font-size: 2rem;
+  font-weight: bold;
+  font-family: 'PT Sans Narrow', sans-serif;
+  letter-spacing: 1px;
+  margin-bottom: 10px;
+}
+.fa {
+  width: 200px;
 }

@@ -1,0 +1,20 @@
+.row {
+  display: flex;
+}
+.column {
+  flex: 33.33%;
+  margin-left: 10px;
+  width: 280px;
+  flex-direction: row;
+  padding: 70px;
+}
+.star {
+  margin-top: 15px;
+}
+.name {
+  margin-left: 50px;
+  margin-top: 15px;
+}
+.fa {
+  height: 267.76px;
+}
