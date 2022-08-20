@@ -1,6 +1,5 @@
 .App {
   text-align: center;
-  font-family: 'PT Sans Narrow', sans-serif;
 }
 
 .App-logo {
@@ -36,22 +35,4 @@
   to {
     transform: rotate(360deg);
   }
-}
-.formitem {
-  flex-direction: row;
-  height: 30px;
-  margin-right: 20px;
-
-  font-weight: bold;
-  font-size: 1.5em;
-}
-
-.form {
-  display: flex;
-
-  flex-direction: row;
-  box-shadow: 0 0 40px rgb(169, 161, 161);
-  padding: 5px;
-  border-radius: 0px;
-  background: rgb(175, 166, 166);
 }
