@@ -1,10 +1,7 @@
-import React from 'react';
-import Card from './Card';
 import faker from 'faker';
-//import ArticleList from './ArticleList';
+import Card from './Card';
 import './Card.css';
-
-const CardList = (props) => {
+function ArticleList() {
   const ArticleList = [
     {
       image: require('./ArticleImage.png'),
@@ -27,19 +24,27 @@ const CardList = (props) => {
       star: '5',
       name1: faker.name.lastName(),
     },
+    {
+      image: faker.image.people(),
+      name: faker.name.firstName(),
+      description: 'JS6',
+      star: '5',
+      name1: faker.name.lastName(),
+    },
+    {
+      image: faker.image.people(),
+      name: faker.name.firstName(),
+      description: 'React Router',
+      star: '5',
+      name1: faker.name.lastName(),
+    },
+    {
+      image: faker.image.people(),
+      name: faker.name.firstName(),
+      description: 'Express',
+      star: '4.9',
+      name1: faker.name.lastName(),
+    },
   ];
-  const filterArticle = ArticleList.filter((x) => {
-    return x.name.toLowerCase().includes(props.searchArticle.toLowerCase());
-  });
-  const A = filterArticle.map((x) => (
-    <Card
-      image={x.image}
-      name={x.name}
-      description={x.description}
-      star={x.star}
-      name1={x.name1}
-    />
-  ));
-  return <div className='row'>{A}</div>;
-};
-export default CardList;
+}
+export default ArticleList;

@@ -1,8 +1,8 @@
 .forminput {
   font-family: 'PT Sans Narrow', sans-serif;
   flex-direction: row;
-  height: 20px;
-  width: 500px;
+  height: 40px;
+  width: 400px;
   margin-right: 20px;
 
   font-weight: bold;

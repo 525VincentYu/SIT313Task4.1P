@@ -1,0 +1,81 @@
+.LD {
+  align-items: center;
+  flex-direction: column;
+  display: flex;
+  border: solid;
+  border-width: 5px;
+  margin-top: 10%;
+  font-family: 'PT Sans Narrow', sans-serif;
+  font-weight: bold;
+  font-size: 1.5em;
+
+  letter-spacing: 1px;
+  word-spacing: 3px;
+  height: 600px;
+  width: 800px;
+  border-color: rgb(78, 138, 206);
+}
+.SURow {
+  display: flex;
+  margin: 30px;
+}
+.LGInput {
+  width: 60%;
+  height: 30px;
+}
+.NA {
+  align-items: flex-start;
+  margin-right: 10px;
+
+  font-weight: bold;
+  width: 200px;
+}
+.SUInput {
+  width: 500px;
+}
+.SUBT {
+  font-family: 'PT Sans Narrow', sans-serif;
+  font-weight: bold;
+  font-size: 1em;
+  margin-top: 10%;
+
+  letter-spacing: 1px;
+  word-spacing: 3px;
+  width: 508px;
+  height: 32px;
+  background-color: rgb(78, 138, 206);
+  color: white;
+  border: none;
+}
+.SU {
+  background-color: white;
+  font-family: 'PT Sans Narrow', sans-serif;
+  font-weight: bold;
+  font-size: 1em;
+
+  letter-spacing: 1px;
+  word-spacing: 3px;
+  color: rgb(78, 138, 206);
+  margin-top: 5%;
+  margin-left: 50%;
+  padding-left: 5%;
+  padding-right: 5%;
+  border: solid;
+  border-width: 5px;
+  border-color: rgb(78, 138, 206);
+}
+.CR {
+  text-align: center;
+  color: rgb(78, 138, 206);
+  font-family: 'PT Sans Narrow', sans-serif;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+
+  letter-spacing: 2px;
+  word-spacing: 3px;
+}
+.YE {
+  margin-right: 35%;
+  width: 200px;
+}

@@ -5,14 +5,20 @@ import { AiFillStar } from 'react-icons/ai';
 const Card = (props) => {
   return (
     <div className='column'>
-      <img className='fa' src={props.image} alt='' />
-      <h3>{props.name}</h3>
-      <h4>{props.description}</h4>
+      <div className='image'>
+        <img className='fa' src={props.image} alt='' />
+      </div>
+      <div className='word'>
+        <p>{props.name}</p>
+      </div>
+      <div className='word'>
+        <p>{props.description}</p>
+      </div>
 
-      <div className='row'>
+      <div className='row1'>
         <AiFillStar size={22} color={'orange'} className='star' />
         <p>{props.star}</p>
-        <h4 className='name'>{props.name1}</h4>
+        <p className='name'>{props.name1}</p>
       </div>
     </div>
   );

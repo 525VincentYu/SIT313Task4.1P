@@ -1,20 +1,39 @@
 .row {
   display: flex;
+  font-family: 'PT Sans Narrow', sans-serif;
+  font-size: 1.5rem;
+  font-weight: bold;
+  align-items: center;
+}
+.row1 {
+  display: flex;
 }
 .column {
   flex: 33.33%;
-  margin-left: 10px;
-  width: 280px;
+  margin-left: 0px;
+  justify-self: center;
+  align-items: center;
+
   flex-direction: row;
-  padding: 70px;
 }
 .star {
-  margin-top: 15px;
+  margin-top: 5px;
+  margin-right: 5px;
 }
 .name {
   margin-left: 50px;
-  margin-top: 15px;
 }
 .fa {
-  height: 267.76px;
+  height: 250px;
+}
+.word {
+  margin-top: 20px;
+  height: 70px;
+  font-family: 'PT Sans Narrow', sans-serif;
+  letter-spacing: 1px;
+  word-spacing: ;
+  font-size: 1.5rem;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
 }

@@ -1,6 +1,6 @@
 body {
   margin: 0;
-  justify-content: center;
+
   align-items: center;
   flex-direction: column;
   display: flex;
@@ -18,7 +18,7 @@ code {
 .formitem {
   font-family: 'PT Sans Narrow', sans-serif;
   flex-direction: row;
-  height: 30px;
+  height: 40px;
   margin-right: 20px;
   margin-top: 5px;
 
@@ -27,15 +27,23 @@ code {
 }
 
 .form {
-  display: flex;
+  height: 60px;
   width: 1000px;
-  margin-top: 30px;
+
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
 
   flex-direction: row;
   box-shadow: 0 0 40px rgb(200, 199, 199);
-  padding: 5px;
+  padding: 10px;
   border-radius: 0px;
   background: rgb(200, 199, 199);
+}
+.image {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
 }
 .form1 {
   display: flex;
@@ -43,6 +51,7 @@ code {
   flex-direction: row;
   box-shadow: 0 0 40px rgb(255, 255, 255);
   padding: 5px;
+
   border-radius: 0px;
   background: rgb(255, 255, 255);
 }
@@ -69,16 +78,18 @@ code {
   border: none;
   color: rgb(188, 196, 196);
 }
-.image {
-  width: 1000px;
-  height: 400px;
+.pre {
+  justify-content: center;
+  align-items: center;
 }
 .feature {
+  display: flex;
+  justify-content: center;
   font-size: 2rem;
   font-weight: bold;
   font-family: 'PT Sans Narrow', sans-serif;
   letter-spacing: 1px;
-  margin-bottom: 10px;
+  margin-top: 30px;
 }
 .fa {
   width: 200px;

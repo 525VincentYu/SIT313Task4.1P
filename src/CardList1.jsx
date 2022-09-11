@@ -4,7 +4,7 @@ import faker from 'faker';
 
 import './Card.css';
 
-function CardList1() {
+const CardList1 = (props) => {
   const TutorialList = [
     {
       image: faker.image.people(),
@@ -28,7 +28,12 @@ function CardList1() {
       name1: faker.name.lastName(),
     },
   ];
-  const A = TutorialList.map((x) => (
+  const filterTutorial = TutorialList.filter((x) => {
+    return x.description
+      .toLowerCase()
+      .includes(props.searchArticle.toLowerCase());
+  });
+  const A = filterTutorial.map((x) => (
     <Card
       image={x.image}
       name={x.name}
@@ -39,5 +44,5 @@ function CardList1() {
   ));
 
   return <div className='row'>{A}</div>;
-}
+};
 export default CardList1;

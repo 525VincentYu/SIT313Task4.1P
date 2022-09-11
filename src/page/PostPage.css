@@ -1,0 +1,120 @@
+.select {
+  font-family: 'PT Sans Narrow', sans-serif;
+  flex-direction: row;
+  height: 30px;
+  width: 1000px;
+  display: flex;
+  font-weight: bold;
+  margin-top: 20px;
+
+  font-size: 1.2em;
+}
+.but {
+  margin-left: 30px;
+  margin-right: 60px;
+}
+.titles {
+  display: flex;
+  font-family: 'PT Sans Narrow', sans-serif;
+  flex-direction: row;
+  height: 30px;
+  width: 1000px;
+  display: flex;
+  font-weight: bold;
+  margin-top: 20px;
+  letter-spacing: 1px;
+
+  font-size: 1.2em;
+}
+.iiput {
+  font-family: 'PT Sans Narrow', sans-serif;
+  font-weight: bold;
+  font-size: 1.2em;
+  word-spacing: 4px;
+
+  width: 900px;
+  margin-left: 50px;
+}
+.iiput2 {
+  font-family: 'PT Sans Narrow', sans-serif;
+  font-weight: bold;
+  font-size: 1.2em;
+  word-spacing: 4px;
+  height: 40px;
+
+  width: 300px;
+  margin-left: 50px;
+}
+
+.problem {
+  font-family: 'PT Sans Narrow', sans-serif;
+  font-weight: bold;
+  font-size: 1.2em;
+  word-spacing: 4px;
+
+  margin-top: 10px;
+  width: 1000px;
+  height: 500px;
+}
+.tags {
+  margin-top: 10px;
+  width: 1000px;
+}
+
+.abstract {
+  white-space: pre-wrap;
+  font-size: 1.5rem;
+  font-weight: bold;
+  font-family: 'PT Sans Narrow', sans-serif;
+  text-align: justify;
+  height: 100px;
+  width: 990px;
+}
+.pls {
+  margin-top: 30px;
+
+  border: none;
+  background: rgb(120, 115, 115);
+  border-color: rgb(200, 199, 199);
+  letter-spacing: 1px;
+  width: 150px;
+  margin-right: 0px;
+  float: right;
+
+  font-size: 1.5rem;
+  font-weight: bold;
+  font-family: 'PT Sans Narrow', sans-serif;
+}
+.article {
+  white-space: pre-wrap;
+  font-size: 1.5rem;
+  font-weight: bold;
+  font-family: 'PT Sans Narrow', sans-serif;
+  text-align: justify;
+  height: 300px;
+  width: 990px;
+}
+.forms {
+  display: flex;
+  width: 1000px;
+
+  margin-top: 30px;
+
+  flex-direction: row;
+
+  padding: 10px;
+  border-radius: 0px;
+  background: rgb(200, 199, 199);
+}
+.formitems {
+  font-family: 'PT Sans Narrow', sans-serif;
+  flex-direction: row;
+  height: 30px;
+  margin-right: 20px;
+  margin-top: 5px;
+
+  word-spacing: 4px;
+
+  font-weight: bold;
+  font-size: 1.5em;
+}
