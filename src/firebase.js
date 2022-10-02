@@ -8,6 +8,8 @@ import { getAuth } from 'firebase/auth';
 const app = firebase.initializeApp({
   apiKey: 'AIzaSyB4VatxwtwKzR0u7av5I4BujEOIVuT0h50',
   authDomain: 'auth-development-50d4c.firebaseapp.com',
+  databaseURL:
+    'https://auth-development-50d4c-default-rtdb.asia-southeast1.firebasedatabase.app',
   projectId: 'auth-development-50d4c',
   storageBucket: 'auth-development-50d4c.appspot.com',
   messagingSenderId: '905510531096',

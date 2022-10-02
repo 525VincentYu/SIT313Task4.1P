@@ -70,7 +70,7 @@ export default function Test() {
           }}
         >
           <Card.Body>
-            <h2 className='CR'>Create a DEV@Deakin Account</h2>
+            <h2 className='CR'>Create a light iot system Account</h2>
 
             {error && <Alert variant='danger'>{error}</Alert>}
             {message && <Alert variant='success'>{message}</Alert>}
