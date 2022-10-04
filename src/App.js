@@ -21,6 +21,7 @@ import Dashboard from './page/Dashboard';
 import ForgotPassword from './page/ForgotPassword';
 import PostPage from './page/PostPage';
 import FindPage from './page/FindQuestion';
+import Plan from './page/PlanPage';
 function App() {
   return (
     <Container
@@ -31,6 +32,7 @@ function App() {
         <AuthProvider>
           <Routes>
             <Route path='/' element={<HomePage />} />
+            <Route path='/Plan' element={<Plan />} />
             <Route path='/Post' element={<PostPage />} />
             <Route path='/Login' element={<Test2 />} />
             <Route path='/SignUp' element={<TestPage />} />

@@ -1,5 +1,5 @@
 import React from 'react';
-import Card from './Card';
+import Card from './CardTest';
 import faker from 'faker';
 //import ArticleList from './ArticleList';
 import './Card.css';
@@ -32,14 +32,16 @@ const CardList = (props) => {
     return x.name.toLowerCase().includes(props.searchArticle.toLowerCase());
   });
   const A = filterArticle.map((x) => (
-    <Card
-      image={x.image}
-      name={x.name}
-      description={x.description}
-      star={x.star}
-      name1={x.name1}
-    />
+    <div style={{ justifyContent: 'center', display: 'flex', flex: '33.3%' }}>
+      <Card
+        image={x.image}
+        name={x.name}
+        description={x.description}
+        star={x.star}
+        name1={x.name1}
+      />
+    </div>
   ));
-  return <div className='row'>{A}</div>;
+  return <div style={{ display: 'flex' }}>{A}</div>;
 };
 export default CardList;

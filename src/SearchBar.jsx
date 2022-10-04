@@ -14,7 +14,7 @@ function SearchBar() {
 
   return (
     <div className='pre'>
-      <div className='form' style={{ marginLeft: '100px' }}>
+      <div className='form'>
         <div className='formitem'>DEV@Deakin</div>
         <div className='form1'>
           <button className='ai'>
