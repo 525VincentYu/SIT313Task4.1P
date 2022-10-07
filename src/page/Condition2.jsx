@@ -14,7 +14,8 @@ import { v4 } from 'uuid';
 import { Button, Form, Input } from 'semantic-ui-react';
 import { addDoc, collection, serverTimestamp } from 'firebase/firestore';
 
-//import { response } from 'express';
+//post condition2
+
 function Condition2() {
   let navigate = useNavigate();
   const date = new Date();
@@ -27,11 +28,14 @@ function Condition2() {
   const [imageList, setImageList] = useState([]);
   const imageListRef = ref(storage, 'images/');
   const [isSubmit, setIsSubmit] = useState(false);
+  //handle the form change
 
   const handleChange = (e) => {
     setErrors('');
     setForm({ ...form, [e.target.name]: e.target.value });
   };
+
+  //validate if it is empty
   const validate = () => {
     let errors = {};
     if (!form.Title) {
@@ -53,7 +57,7 @@ function Condition2() {
     if (imageUpload == null) return;
     setLoading(true);
 
-    const imageRef = ref(storage, `images/${imageUpload.name + v4()}`);
+    const imageRef = ref(storage, `videos/${imageUpload.name + v4()}`);
     uploadBytes(imageRef, imageUpload).then((snapshot) => {
       setLoading(false);
       alert('Image uploaded!');
@@ -79,7 +83,7 @@ function Condition2() {
     if (Object.keys(errors).length) return setErrors(errors);
     setIsSubmit(true);
 
-    await addDoc(collection(db, 'post'), {
+    await addDoc(collection(db, 'postvideo'), {
       ...form,
       Date: date.toLocaleDateString(),
     });

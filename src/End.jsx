@@ -5,35 +5,98 @@ import {
   AiFillTwitterSquare,
   AiFillInstagram,
 } from 'react-icons/ai';
+import { Link, useNavigate } from 'react-router-dom';
+import { Button } from 'react-bootstrap';
 
 function End() {
+  const navigate = useNavigate();
   return (
     <div>
       <div className='endform'>
         <div className='endformitem'>
-          <h1 className='ww'>Explore</h1>
-          <h2 className='ww'>Home</h2>
-          <h2 className='ww'>Questions</h2>
-          <h2 className='ww'>Articles</h2>
-          <h2 className='ww'>Tutorials</h2>
+          <div onClick={() => navigate('/ss')} className='ww'>
+            Explore
+          </div>
+          <h2 onClick={() => navigate('/')} className='ww'>
+            Home
+          </h2>
+          <h2 onClick={() => navigate('/ss')} className='ww'>
+            Questions
+          </h2>
+          <h2 onClick={() => navigate('/tt')} className='ww'>
+            Articles
+          </h2>
+          <h2 onClick={() => navigate('/')} className='ww'>
+            Tutorials
+          </h2>
         </div>
         <div className='endformitem'>
-          <h1 className='ww'>Support</h1>
+          <h1
+            onClick={() =>
+              navigate((window.location.href = 'https://www.deakin.edu.au/'))
+            }
+            className='ww'
+          >
+            Support
+          </h1>
           <h2 className='ww'>FAQs</h2>
-          <h2 className='ww'>Help</h2>
-          <h2 className='ww'>Contact Us</h2>
+          <h2
+            onClick={() =>
+              navigate((window.location.href = 'https://github.com/'))
+            }
+            className='ww'
+          >
+            Help
+          </h2>
+          <h2
+            onClick={() =>
+              navigate((window.location.href = 'https://www.deakin.edu.au/'))
+            }
+            className='ww'
+          >
+            Contact Us
+          </h2>
         </div>
         <div className='endformitem'>
           <h1 className='ww'>Stay connected</h1>
           <div className='icon'>
-            <div className='ss'>
-              <AiFillFacebook size={40} />
+            <div
+              onClick={() =>
+                navigate((window.location.href = 'https://www.deakin.edu.au/'))
+              }
+              className='ss'
+            >
+              <AiFillFacebook
+                onClick={() =>
+                  navigate(
+                    (window.location.href =
+                      'https://www.facebook.com/DeakinUniversity/')
+                  )
+                }
+                size={40}
+              />
             </div>
             <div className='ss'>
-              <AiFillTwitterSquare size={40} />
+              <AiFillTwitterSquare
+                onClick={() =>
+                  navigate(
+                    (window.location.href =
+                      'https://twitter.com/Deakin?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor')
+                  )
+                }
+                size={40}
+              />
             </div>
             <div className='ss'>
-              <AiFillInstagram size={40} />
+              <AiFillInstagram
+                onClick={() =>
+                  navigate(
+                    (window.location.href =
+                      'https://www.instagram.com/deakinuniversity/?hl=en')
+                  )
+                }
+                size={40}
+              />
             </div>
           </div>
         </div>

@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useRef } from 'react';
-import './Test.css';
+import '../page/Test.css';
 import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd';
-
+import './styles.css';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import Accordion from 'react-bootstrap/Accordion';
@@ -10,7 +10,7 @@ import CloseButton from 'react-bootstrap/CloseButton';
 import { Icon, Input } from 'semantic-ui-react';
 import ToggleButton from 'react-bootstrap/ToggleButton';
 import ToggleButtonGroup from 'react-bootstrap/ToggleButtonGroup';
-
+import axios from 'axios';
 import { db } from '../firebase';
 import { useNavigate } from 'react-router-dom';
 import { collection, onSnapshot } from 'firebase/firestore';
@@ -19,35 +19,63 @@ import Card from 'react-bootstrap/Card';
 import ListGroup from 'react-bootstrap/ListGroup';
 import { Button } from 'react-bootstrap';
 import { list, StringFormat } from 'firebase/storage';
+import { Link } from 'react-router-dom';
+import { useAsync } from '../hooks/useAsync';
+import { getPosts } from '../services/posts';
 
-const Questions = () => {
-  const [posts, setPosts] = useState([]);
-  const [loading, setLoading] = useState(false);
+export function PostList() {
+  const [postss, setPosts] = useState([]);
+  const [loadings, setLoading] = useState(false);
   const [option, setOption] = useState();
+  const [id, setId] = useState();
+
+  const { loading, error, value: posts } = useAsync(getPosts);
+
   const [searchTerm, setSearchTerm] = useState('');
   const [query, setQuery] = useState('');
   const navigate = useNavigate();
+
+  //remove list
   function removeList(id) {
-    const newList = posts.filter((l) => l.id !== id);
-    console.log('newList' + newList);
+    const newList = postss.filter((l) => l.id !== id);
+    console.log('list' + newList.length);
+
     setPosts(newList);
   }
+  //see the post details
+  function seeDetail(id) {
+    const newList = postss.filter((l) => l.id == id);
 
+    console.log(newList[0].id + 'id');
+    axios.post('http://localhost:3002/api/card', {
+      Code: newList[0].Code,
+      Date: newList[0].Date,
+      Description: newList[0].Description,
+      Tags: newList[0].Tags,
+      Title: newList[0].Title,
+    });
+  }
+  //Draggble function
   function handleOnDragEnd(result) {
     //if (!result.destination) return;
 
-    const items = Array.from(posts);
+    const items = Array.from(postss);
     console.log('this i s items ' + items);
     const [reorderedItem] = items.splice(result.source.index, 1);
     items.splice(result.destination.index, 0, reorderedItem);
 
     setPosts(items);
-    console.log('this is new Post' + posts);
+    console.log('this is new Post' + postss);
   }
 
   useEffect(() => {
     setOption(0);
     setLoading(true);
+
+    //console.log('fdfsfds' + postss);
+    //setComment(postss);
+
+    //get the post list in database
     const unsub = onSnapshot(
       collection(db, 'questions'),
       (snapshot) => {
@@ -56,7 +84,8 @@ const Questions = () => {
           list.push({ id: doc.id, ...doc.data() });
         });
         setPosts(list);
-        console.log('this is  posts', posts);
+
+        console.log('this is  posts', postss);
         //const items = Array.from(posts);
         //console.log('this i s items ' + items);
         console.log('this is list', list[0].id);
@@ -70,6 +99,11 @@ const Questions = () => {
       unsub();
     };
   }, []);
+
+  if (loading) return <h1>Loading</h1>;
+  if (error) return <h1 className='error-msg'>{error}</h1>;
+  const comment = Array.from(posts);
+  console.log('ccc' + comment[0].id);
 
   return (
     <div>
@@ -120,7 +154,7 @@ const Questions = () => {
                   className='g-4'
                 >
                   {option == 0 &&
-                    posts.map((item, index) => (
+                    postss.map((item, index) => (
                       <Draggable
                         key={item.Title}
                         draggableId={item.Tags}
@@ -138,7 +172,7 @@ const Questions = () => {
                                   style={{
                                     height: 'auto',
                                     width: '18rem',
-                                    marginRight: '200px',
+                                    marginRight: '300px',
                                   }}
                                 >
                                   <Card.Body>
@@ -156,8 +190,28 @@ const Questions = () => {
                                     </ListGroup.Item>
                                   </ListGroup>
                                   <Card.Body>
-                                    <Card.Link href='#'>Card Link</Card.Link>
-                                    <Card.Link href='#'>Another Link</Card.Link>
+                                    <Button
+                                      onClick={() =>
+                                        setId(comment[index].id) &&
+                                        console.log('kkk' + comment[index].id)
+                                      }
+                                    >
+                                      load
+                                    </Button>
+                                    <Card.Link
+                                      //index={index}
+                                      onClick={() =>
+                                        seeDetail(item.id) &&
+                                        console.log(
+                                          'kkk' + comment[index].id
+                                        ) &&
+                                        setId(comment[1].id)
+                                      }
+                                      href={`/ss/posts/${id}`}
+                                    >
+                                      Card Link
+                                    </Card.Link>
+                                    <Card.Link Link>Another Link</Card.Link>
                                   </Card.Body>
                                   <Accordion>
                                     <Accordion.Item eventKey='0'>
@@ -192,7 +246,7 @@ const Questions = () => {
                     ))}
 
                   {option == 1 &&
-                    posts
+                    postss
                       .filter((item) => item.Date.toLowerCase().includes(query))
                       .map((item) => (
                         <Col>
@@ -249,7 +303,7 @@ const Questions = () => {
                         </Col>
                       ))}
                   {option == 2 &&
-                    posts
+                    postss
                       .filter((item) => item.Tags.includes(query))
                       .map((item) => (
                         <Col>
@@ -306,7 +360,7 @@ const Questions = () => {
                         </Col>
                       ))}
                   {option == 3 &&
-                    posts
+                    postss
                       .filter((item) => item.Title.includes(query))
                       .map((item) => (
                         <Col>
@@ -370,28 +424,20 @@ const Questions = () => {
         </DragDropContext>
       </div>
     </div>
-    /*<Container>
-      <Card.Group>
-        <Grid columns={3} stackable>
-          {posts &&
-            posts.map((item) => (
-              <Grid.Column>
-                <Card.Content>
-                  <Image
-                    src={item.img}
-                    size='medium'
-                    style={{
-                      height: '150px',
-                      width: '150px',
-                      borderRedius: '50%',
-                    }}
-                  />
-                </Card.Content>
-              </Grid.Column>
-            ))}
-        </Grid>
-      </Card.Group>
-    </Container>*/
   );
-};
-export default Questions;
+}
+//const { loading, error, value: posts } = useAsync(getPosts);
+
+//if (loading) return <h1>Loading</h1>;
+//if (error) return <h1 className='error-msg'>{error}</h1>;
+
+//return posts.map((post) => {
+/*return (
+      <h1 key={post.id}>
+        <Link to={`/posts/${post.id}`}>{post.title}</Link>
+      </h1>
+    );
+  });
+  <h1 style={{ display: 'flex', justifyContent: 'center' }} key={post.id}>
+      <Link to={`/ss/posts/${post.id}`}>{post.title}</Link> </h1>
+}*/

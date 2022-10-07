@@ -31,6 +31,7 @@ export default function Dashboard() {
             fontSize: '1.5rem',
             fontWeight: 'bold',
             letterSpacing: '2px',
+            marginBottom: '100px',
           }}
         >
           <Card.Body>

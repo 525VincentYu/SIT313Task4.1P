@@ -4,6 +4,7 @@ import Condition1 from './Condition1';
 import Condition2 from './Condition2';
 
 function PostPage() {
+  //set condition
   const [post, setPost] = useState();
 
   return (
@@ -35,6 +36,7 @@ function PostPage() {
       <div className='forms'>
         <div className='formitems'>What do you want to ask or share </div>
       </div>
+
       {post === true && <Condition1 />}
       {post === false && <Condition2 />}
     </body>

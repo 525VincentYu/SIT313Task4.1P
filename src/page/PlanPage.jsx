@@ -19,6 +19,7 @@ import { useAuth } from '../contexts/AuthContext';
 import { auth, createUserDocument } from '../firebase';
 
 export default function Plan() {
+  //payment api key
   const MySwal = withReactContent(Swal);
   const publishableKey =
     'pk_test_51L0nNjKuatJVCh6U3QdhGIXJ7AiLvVWrzyfvqFewOiQkfV31lHDRZtgTfqRUDVIGTu2xUNjxNxeS2YMVCeqSVgZd00YDYdGyIe';
@@ -26,6 +27,8 @@ export default function Plan() {
     name: '',
     price: 0,
   });
+
+  //if success
   const handleSuccess = () => {
     MySwal.fire({
       icon: 'success',
@@ -33,6 +36,7 @@ export default function Plan() {
       time: 4000,
     });
   };
+  //if failure
   const handleFailure = () => {
     MySwal.fire({
       icon: 'error',
@@ -40,6 +44,8 @@ export default function Plan() {
       time: 4000,
     });
   };
+
+  //pay function
   const payNow = async (token) => {
     try {
       const response = await axios({

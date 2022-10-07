@@ -34,7 +34,7 @@ function SearchBar() {
         <button className='pl' onClick={() => navigate('/Login')}>
           Login
         </button>
-        <button className='pl' onClick={() => navigate('/Questions')}>
+        <button className='pl' onClick={() => navigate('/ss')}>
           Question
         </button>
       </div>
@@ -44,12 +44,16 @@ function SearchBar() {
       <p className='feature'>Featured Acticles</p>
       <CardList searchArticle={searchTerm} />
       <div className='feature'>
-        <button className='pl'>See all articles</button>
+        <button className='pl' onClick={() => navigate('/ss')}>
+          See all articles
+        </button>
       </div>
       <p className='feature'>Featured Tutorials</p>
       <CardList1 searchArticle={searchTerm} />
       <div className='feature'>
-        <button className='pl'>See all articles</button>
+        <button className='pl' onClick={() => navigate('/tt')}>
+          See all articles
+        </button>
       </div>
     </div>
   );

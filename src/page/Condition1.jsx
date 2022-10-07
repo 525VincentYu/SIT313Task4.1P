@@ -18,6 +18,9 @@ import { v4 } from 'uuid';
 
 import { Button, Form, Input } from 'semantic-ui-react';
 import { addDoc, collection, serverTimestamp } from 'firebase/firestore';
+
+//post condition 1
+
 function Condition1() {
   const [form, setForm] = useState({});
   const [cod, setCode] = useState();
@@ -39,6 +42,8 @@ function Condition1() {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
+  //validate if is empty
+
   const validate = () => {
     let errors = {};
     if (!form.Title) {
@@ -54,6 +59,7 @@ function Condition1() {
     return errors;
   };
 
+  //handle the form
   const handleSubmit = async (e) => {
     console.log(form.Description);
     e.preventDefault();
@@ -69,15 +75,6 @@ function Condition1() {
     //setForm(null);
     navigate('../');
     alert('Post uploaded!');
-  };
-
-  const onChange = (e) => {
-    const { value, name } = e.target;
-
-    setForm((state) => ({
-      ...state,
-      [name]: value,
-    }));
   };
 
   return (

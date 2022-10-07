@@ -32,7 +32,7 @@ export default function Test2() {
       setLoading(true);
 
       await login(emailRef.current.value, passwordRef.current.value);
-      navigate('../Dashboard', { replace: true });
+      navigate('../', { replace: true });
 
       console.log(currentUser.email);
     } catch {
